@@ -3,9 +3,9 @@ import { NavLink, useLocation } from "react-router-dom";
 import { ChevronDown, ChevronRight } from "lucide-react";
 import routes from "../../routes"; // Adjust path as needed
 
-const userRole = "admin";
-
 const Sidebar = () => {
+  // admin|caregiver
+  const userRole = "caregiver";
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
   const location = useLocation();
 

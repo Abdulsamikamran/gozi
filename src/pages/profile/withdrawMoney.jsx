@@ -162,12 +162,6 @@ export default function WithdrawMoneyPage() {
               Next
             </button>
           </div>
-          {/* K Avatar */}
-          <div className={`absolute ${avatarPositions[1]} z-10`}>
-            <div className="w-10 h-10 bg-[#8848E9] rounded-full flex items-center justify-center text-white font-bold text-lg shadow-[2px_4px_8px_0_rgba(0,0,0,0.32)] border-2 border-white">
-              K
-            </div>
-          </div>
         </>
       )}
 

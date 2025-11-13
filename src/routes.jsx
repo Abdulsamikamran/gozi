@@ -1,13 +1,11 @@
 import React from "react";
-import { FaUser, FaUsersCog } from "react-icons/fa";
-import { MdHome } from "react-icons/md";
+import { FaClipboard, FaCreditCard, FaUser, FaUsersCog } from "react-icons/fa";
+import { MdHome, MdShield } from "react-icons/md";
 import { TbLayoutDashboardFilled } from "react-icons/tb";
-import { FaMoneyBills } from "react-icons/fa6";
-import { IoSettings, IoSettingsSharp } from "react-icons/io5";
-import { TiTicket } from "react-icons/ti";
-import { IoWallet } from "react-icons/io5";
+import { IoSettings, IoSettingsSharp, IoTicket } from "react-icons/io5";
 import SettingsLayout from "./components/layout/layoutSettings";
 import { IoMdWallet } from "react-icons/io";
+import { BsPersonFillGear } from "react-icons/bs";
 
 const HomePage = React.lazy(() => import("./pages/Home"));
 const WelcomPage = React.lazy(() => import("./pages/Welcome"));
@@ -40,6 +38,24 @@ const WalletTransactionsPage = React.lazy(() =>
 const WithdrawMoneyPage = React.lazy(() =>
   import("./pages/profile/withdrawMoney")
 );
+const PaymentMethodPage = React.lazy(() =>
+  import("./pages/profile/paymentMethod")
+);
+const AddPaymentMethod = React.lazy(() =>
+  import("./pages/profile/addPaymentMethod")
+);
+const PrivacyPolicyPage = React.lazy(() =>
+  import("./pages/misc/privacyPolicy")
+);
+const TermsAndConditionsPage = React.lazy(() =>
+  import("./pages/misc/termsAndConditions")
+);
+const BookingsPage = React.lazy(() => import("./pages/bookings/bookingsPage"));
+const DocBookingPage = React.lazy(() =>
+  import("./pages/bookings/docBookingPage")
+);
+const InterViewPage = React.lazy(() => import("./pages/Interviews"));
+const ChatPage = React.lazy(() => import("./pages/chat/chatPage"));
 
 const routes = [
   //auth + welcom flow
@@ -51,8 +67,8 @@ const routes = [
     path: "/welcome",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <WelcomPage />,
@@ -66,8 +82,8 @@ const routes = [
     path: "/sign-in",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <SignInPage />,
@@ -81,8 +97,8 @@ const routes = [
     path: "/sign-up",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <SignUpPage />,
@@ -96,8 +112,8 @@ const routes = [
     path: "/select-profile-type",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <SelectProfileType />,
@@ -111,8 +127,8 @@ const routes = [
     path: "/create-profile",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <CreatProfilePage />,
@@ -126,8 +142,8 @@ const routes = [
     path: "/add-care-recipient",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <AddCareRecipient />,
@@ -141,8 +157,8 @@ const routes = [
     path: "/share-health-info",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <ShareHealthInfo />,
@@ -156,8 +172,8 @@ const routes = [
     path: "/all-care-recipients",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <AllCareRecipients />,
@@ -171,8 +187,8 @@ const routes = [
     path: "/emergency-contacts",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <EmergencyContacts />,
@@ -186,8 +202,8 @@ const routes = [
     path: "/payment-method",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <PaymentMethod />,
@@ -201,8 +217,8 @@ const routes = [
     path: "/reset-password",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <ResetPasswordPage />,
@@ -217,13 +233,73 @@ const routes = [
     path: "/dashboard",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <HomePage />,
     isProtected: true,
     show: true,
+  },
+  {
+    name: "My Bookings",
+    role: ["admin", "caregiver"],
+    layout: "/admin",
+    path: "/bookings",
+    icon: (
+      <IoTicket
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <BookingsPage />,
+    isProtected: true,
+    show: true,
+  },
+  {
+    name: "Interviews",
+    role: ["admin"],
+    layout: "/admin",
+    path: "/interviews",
+    icon: (
+      <BsPersonFillGear
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <InterViewPage />,
+    isProtected: true,
+    show: true,
+  },
+  {
+    name: "Chat",
+    role: ["admin"],
+    layout: "/admin",
+    path: "/chat",
+    icon: (
+      <BsPersonFillGear
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <ChatPage />,
+    isProtected: true,
+    show: false,
+  },
+  {
+    name: "Dr Bookings",
+    role: ["admin"],
+    layout: "/admin",
+    path: "/bookings/doc",
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <DocBookingPage />,
+    isProtected: true,
+    show: false,
   },
   {
     name: "Doctor Profile",
@@ -232,8 +308,8 @@ const routes = [
     path: "/dashboard/doctor-profile",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <DrProfilePage />,
@@ -247,8 +323,8 @@ const routes = [
     path: "/dashboard/schedule-interview",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <ScheduleInterviewPage />,
@@ -262,8 +338,8 @@ const routes = [
     path: "/dashboard/schedule-interview/success",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <ScheduleInterviewSuccessPage />,
@@ -277,8 +353,8 @@ const routes = [
     path: "/dashboard/schedule-interview/checkout",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <CheckoutPage />,
@@ -292,8 +368,8 @@ const routes = [
     path: "/dashboard/schedule-interview/checkout",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <CheckoutPage />,
@@ -307,8 +383,8 @@ const routes = [
     path: "/notifications",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <NotificationsPage />,
@@ -322,8 +398,8 @@ const routes = [
     path: "/settings/wallet/transactions",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <WalletTransactionsPage />,
@@ -337,8 +413,8 @@ const routes = [
     path: "/settings/wallet/withdraw",
     icon: (
       <TbLayoutDashboardFilled
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     component: <WithdrawMoneyPage />,
@@ -346,14 +422,30 @@ const routes = [
     show: false,
   },
   {
+    name: "Add Payment Method",
+    role: ["admin"],
+    layout: "/admin",
+    path: "/settings/payment/add",
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <AddPaymentMethod />,
+    isProtected: true,
+    show: false,
+  },
+
+  {
     name: "Settings",
     layout: "/admin",
     role: ["admin"],
     path: "/settings",
     icon: (
       <IoSettingsSharp
-        w="20px"
-        h="20px"
+        w="60px"
+        h="60px"
       />
     ),
     // component: <div>Select a setting option from the sidebar.</div>,
@@ -365,8 +457,8 @@ const routes = [
         path: "profile",
         icon: (
           <FaUser
-            w="20px"
-            h="20px"
+            w="60px"
+            h="60px"
           />
         ),
         component: <ProfileSettingsPage />,
@@ -376,8 +468,8 @@ const routes = [
         path: "wallet",
         icon: (
           <IoMdWallet
-            w="20px"
-            h="20px"
+            w="60px"
+            h="60px"
           />
         ),
         component: <WalletPage />,
@@ -385,17 +477,36 @@ const routes = [
       {
         name: "Payment Method",
         path: "payment",
-        component: <HomePage />,
+        component: <PaymentMethodPage />,
+        icon: (
+          <FaCreditCard
+            w="60px"
+            h="60px"
+          />
+        ),
       },
+
       {
         name: "Privacy Policy",
         path: "privacy",
-        component: <HomePage />,
+        component: <PrivacyPolicyPage />,
+        icon: (
+          <MdShield
+            w="60px"
+            h="60px"
+          />
+        ),
       },
       {
         name: "Terms & Conditions",
         path: "terms",
-        component: <HomePage />,
+        component: <TermsAndConditionsPage />,
+        icon: (
+          <FaClipboard
+            w="60px"
+            h="60px"
+          />
+        ),
       },
     ],
   },
