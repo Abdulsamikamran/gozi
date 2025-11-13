@@ -33,7 +33,7 @@ const ShareHealthInfo = () => {
   };
 
   return (
-    <div className="min-h-screen mx-20 bg-white">
+    <div className="min-h-screen mx-20 ">
       {/* Main Content */}
       <div className=" pb-24">
         <div className=" flex gap-5 py-10 items-start ">
@@ -41,7 +41,10 @@ const ShareHealthInfo = () => {
             onClick={() => navigate(-1)}
             className=" hover:bg-gray-100 rounded-lg mt-3 transition-colors"
           >
-            <img src="/assets/icons/back-arrow.svg" alt="" />
+            <img
+              src="/assets/icons/back-arrow.svg"
+              alt=""
+            />
           </button>
           <div>
             <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -53,7 +56,10 @@ const ShareHealthInfo = () => {
           </div>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+        >
           <div className="grid md:grid-cols-2 gap-5">
             <Input
               label="Health Concerns"
@@ -137,7 +143,11 @@ const ShareHealthInfo = () => {
 
           {/* Next Button */}
           <div className="flex justify-end pt-4">
-            <Button type="submit" size="lg" className="min-w-[200px]">
+            <Button
+              type="submit"
+              size="lg"
+              className="min-w-[200px]"
+            >
               Next
             </Button>
           </div>

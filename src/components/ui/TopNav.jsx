@@ -1,7 +1,9 @@
 import React from "react";
 import { Search, Bell, Phone, MessageSquare, ChevronRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
 const TopNav = () => {
+  const navigate = useNavigate();
   return (
     <header className="bg-white border-b border-gray-200 px-8 py-4">
       <div className="flex items-center justify-between">
@@ -24,17 +26,29 @@ const TopNav = () => {
         <div className="flex items-center gap-3 ml-6">
           <img src="/assets/icons/search-filter.svg" />
 
-          <button className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors relative">
-            <Bell size={20} className="text-gray-700" />
+          <button
+            onClick={() => navigate("/notifications")}
+            className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors relative"
+          >
+            <Bell
+              size={20}
+              className="text-gray-700"
+            />
             <span className="absolute top-2 right-2 w-2 h-2 bg-red-500 rounded-full"></span>
           </button>
 
           <button className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
-            <Phone size={20} className="text-gray-700" />
+            <Phone
+              size={20}
+              className="text-gray-700"
+            />
           </button>
 
           <button className="p-3 bg-gray-100 rounded-lg hover:bg-gray-200 transition-colors">
-            <MessageSquare size={20} className="text-gray-700" />
+            <MessageSquare
+              size={20}
+              className="text-gray-700"
+            />
           </button>
 
           {/* User Profile */}
@@ -47,7 +61,10 @@ const TopNav = () => {
             <div className="text-left">
               <div className="font-semibold text-gray-900">Jack Jameson</div>
             </div>
-            <ChevronRight size={18} className="text-gray-400" />
+            <ChevronRight
+              size={18}
+              className="text-gray-400"
+            />
           </div>
         </div>
       </div>

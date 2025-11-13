@@ -41,7 +41,10 @@ const SignIn = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5"
+        >
           <Input
             label="Email"
             type="email"
@@ -91,7 +94,10 @@ const SignIn = () => {
             </button>
           </div>
           <div className="px-20 flex justify-center">
-            <Button type="submit" size="lg">
+            <Button
+              type="submit"
+              size="lg"
+            >
               Sign in
             </Button>
           </div>
@@ -100,7 +106,7 @@ const SignIn = () => {
         <div className="text-center">
           <span className="text-gray-600">Don't have an account? </span>
           <button
-            onClick={() => navigate("/signup")}
+            onClick={() => navigate("/sign-up")}
             className="text-teal-600 font-medium hover:text-teal-700"
           >
             Sign up

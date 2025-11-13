@@ -20,14 +20,17 @@ const AllCareRecipients = () => {
   const handleSelectRecipient = (id) => console.log("Selected recipient:", id);
 
   return (
-    <div className="flex flex-col min-h-screen bg-white mx-20">
+    <div className="flex flex-col min-h-screen  mx-20">
       {/* Header */}
       <div className="flex gap-5 py-10 items-start">
         <button
           onClick={() => navigate(-1)}
           className="hover:bg-gray-100 rounded-lg mt-3 transition-colors"
         >
-          <img src="/assets/icons/back-arrow.svg" alt="" />
+          <img
+            src="/assets/icons/back-arrow.svg"
+            alt=""
+          />
         </button>
         <div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -97,7 +100,11 @@ const AllCareRecipients = () => {
 
       {/* Push the Next button to the bottom-right */}
       <div className="mt-auto flex justify-end pb-10">
-        <Button onClick={handleNext} size="lg" className="min-w-[200px]">
+        <Button
+          onClick={handleNext}
+          size="lg"
+          className="min-w-[200px]"
+        >
           Next
         </Button>
       </div>

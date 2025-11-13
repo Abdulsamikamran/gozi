@@ -11,7 +11,10 @@ const Welcome = () => {
       {/* Left Side - Welcome Content */}
       <div className="w-full flex-1 flex flex-col justify-center items-center  text-white">
         <div className="max-w-md w-full flex flex-col justify-center items-center space-y-8">
-          <img src="/assets/images/full-logo.svg" alt="logo" />
+          <img
+            src="/assets/images/full-logo.svg"
+            alt="logo"
+          />
 
           <p className="text-lg leading-relaxed text-center ">
             Gavari is a modern caregiver marketplace that makes it simple for
@@ -25,7 +28,7 @@ const Welcome = () => {
               variant="outline"
               fullWidth
               size="lg"
-              onClick={() => navigate("/signin")}
+              onClick={() => navigate("/sign-in")}
             >
               Sign in
             </Button>
@@ -34,7 +37,7 @@ const Welcome = () => {
               variant="secondary"
               fullWidth
               size="lg"
-              onClick={() => navigate("/signup")}
+              onClick={() => navigate("/sign-up")}
             >
               Sign up
             </Button>

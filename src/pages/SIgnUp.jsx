@@ -41,7 +41,10 @@ const SignUp = () => {
           </p>
         </div>
 
-        <form onSubmit={handleSubmit} className="space-y-5">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-5"
+        >
           <Input
             label="Email"
             type="email"
@@ -74,7 +77,10 @@ const SignUp = () => {
             required
           />
           <div className="flex justify-center">
-            <Button type="submit" size="lg">
+            <Button
+              type="submit"
+              size="lg"
+            >
               Sign up
             </Button>
           </div>
@@ -83,7 +89,7 @@ const SignUp = () => {
         <div className="text-center">
           <span className="text-gray-600">Already have an account? </span>
           <button
-            onClick={() => navigate("/signin")}
+            onClick={() => navigate("/sign-in")}
             className="text-teal-600 font-medium hover:text-teal-600"
           >
             Sign in

@@ -1,7 +1,9 @@
 import React from "react";
 import CaretakerCard from "../components/ui/CaretakerCard";
+import { useNavigate } from "react-router-dom";
 
 const HomePage = () => {
+  const navigate = useNavigate();
   const caretakers = [
     {
       id: 1,
@@ -50,9 +52,15 @@ const HomePage = () => {
         <h2 className="text-3xl semi-bold text-gray-900 mb-6">
           Top Caretakers
         </h2>
-        <div className="space-y-4">
+        <div
+          className="space-y-4"
+          onClick={() => navigate("/dashboard/doctor-profile")}
+        >
           {caretakers.map((caretaker) => (
-            <CaretakerCard key={caretaker.id} caretaker={caretaker} />
+            <CaretakerCard
+              key={caretaker.id}
+              caretaker={caretaker}
+            />
           ))}
         </div>
       </div>

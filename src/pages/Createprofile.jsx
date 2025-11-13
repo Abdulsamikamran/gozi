@@ -43,7 +43,7 @@ const CreateProfile = () => {
   };
 
   return (
-    <div className="min-h-screen mx-20 bg-white">
+    <div className="min-h-screen mx-20">
       {/* Header */}
 
       <div className=" flex gap-5 py-10 items-start ">
@@ -51,7 +51,10 @@ const CreateProfile = () => {
           onClick={() => navigate(-1)}
           className=" hover:bg-gray-100 rounded-lg mt-3 transition-colors"
         >
-          <img src="/assets/icons/back-arrow.svg" alt="" />
+          <img
+            src="/assets/icons/back-arrow.svg"
+            alt=""
+          />
         </button>
         <div>
           <h1 className="text-5xl font-bold text-gray-900 mb-2">
@@ -66,7 +69,10 @@ const CreateProfile = () => {
 
       {/* Main Content */}
       <div className=" mx-auto  pb-24">
-        <form onSubmit={handleSubmit} className="space-y-6">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6"
+        >
           {/* Profile Picture Section */}
           <div className="bg-white border border-gray-200 rounded-xl p-6">
             <div className="flex items-center gap-6">
@@ -94,7 +100,11 @@ const CreateProfile = () => {
                 <h3 className="text-xl font-bold text-gray-900 mb-3">
                   Profile Picture
                 </h3>
-                <Button variant="primary" size="md" className="max-w-[200px]">
+                <Button
+                  variant="primary"
+                  size="md"
+                  className="max-w-[200px]"
+                >
                   {" "}
                   Upload photo
                 </Button>
@@ -191,7 +201,11 @@ const CreateProfile = () => {
 
           {/* Next Button */}
           <div className="flex justify-end pt-4">
-            <Button type="submit" size="lg" className="min-w-[200px]">
+            <Button
+              type="submit"
+              size="lg"
+              className="min-w-[200px]"
+            >
               Next
             </Button>
           </div>
