@@ -22,7 +22,7 @@ const PasswordSuccess = () => {
           <img src="assets/images/auth-success-icon.svg" alt="" />
         </div>
         <div className="flex justify-center">
-          <Button size="lg" onClick={() => navigate("/signin")}>
+          <Button size="lg" onClick={() => navigate("/")}>
             Done
           </Button>
         </div>

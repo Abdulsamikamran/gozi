@@ -1,10 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Button from "../components/ui/Button";
 
 const SelectProfileType = () => {
   const navigate = useNavigate();
   const [selectedType, setSelectedType] = useState("care-seeker");
+
+  // Load stored value when component mounts
+  useEffect(() => {
+    const saved = localStorage.getItem("profileType");
+    if (saved) {
+      setSelectedType(saved);
+    }
+  }, []);
+
+  // Save to localStorage whenever the user selects a type
+  const handleSelect = (type) => {
+    setSelectedType(type);
+    localStorage.setItem("profileType", type);
+  };
 
   const handleNext = () => {
     console.log("Selected type:", selectedType);
@@ -37,7 +51,7 @@ const SelectProfileType = () => {
         <div className="grid md:grid-cols-2 justify-center items-center gap-6 mb-8">
           {/* Care Seeker Card */}
           <button
-            onClick={() => setSelectedType("care-seeker")}
+            onClick={() => handleSelect("care-seeker")}
             className={`p-8 rounded-2xl border-2 shadow-lg transition-all text-left ${
               selectedType === "care-seeker"
                 ? "border-teal-600 "
@@ -46,7 +60,6 @@ const SelectProfileType = () => {
           >
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-24 h-24 bg-gray-100 rounded-2xl flex items-center justify-center">
-                {/* Care Seeker Icon */}
                 <img src="/assets/images/seeker.svg" alt="" />
               </div>
               <div>
@@ -62,7 +75,7 @@ const SelectProfileType = () => {
 
           {/* Care Partner Card */}
           <button
-            onClick={() => setSelectedType("care-partner")}
+            onClick={() => handleSelect("care-partner")}
             className={`p-8 rounded-2xl border-2 shadow-lg transition-all text-left ${
               selectedType === "care-partner"
                 ? "border-teal-600 "
@@ -71,7 +84,6 @@ const SelectProfileType = () => {
           >
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-24 h-24 bg-gray-100 rounded-2xl flex items-center justify-center">
-                {/* Care Partner Icon */}
                 <img src="/assets/images/giver.svg" alt="" />
               </div>
               <div>
