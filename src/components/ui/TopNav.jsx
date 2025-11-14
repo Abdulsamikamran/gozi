@@ -51,7 +51,10 @@ const TopNav = () => {
           </button>
 
           {/* User Profile */}
-          <div className="flex items-center gap-3 ml-3 pl-3 border-l border-gray-200">
+          <div
+            onClick={() => navigate("/welcome")}
+            className="flex items-center cursor-pointer gap-3 ml-3 pl-3 border-l border-gray-200"
+          >
             <img
               src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop"
               alt="Jack Jameson"
