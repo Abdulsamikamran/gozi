@@ -24,7 +24,7 @@ const PersonalInformation = React.lazy(() =>
   import("./pages/PersonalInformation")
 );
 const ResetPasswordPage = React.lazy(() => import("./pages/ResetPassword"));
-const EnterExperience = React.lazy(() => import("./pages/enterExperience"));
+const EnterExperience = React.lazy(() => import("./pages/EnterExperience"));
 
 const DrProfilePage = React.lazy(() => import("./pages/home/docProfilePage"));
 const OTPPage = React.lazy(() => import("./pages/OTP"));
