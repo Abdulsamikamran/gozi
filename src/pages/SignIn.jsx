@@ -41,10 +41,7 @@ const SignIn = () => {
           </p>
         </div>
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-5"
-        >
+        <form onSubmit={handleSubmit} className="space-y-5">
           <Input
             label="Email"
             type="email"
@@ -73,14 +70,7 @@ const SignIn = () => {
                 name="rememberMe"
                 checked={formData.rememberMe}
                 onChange={handleChange}
-                className="relative w-4 h-4 appearance-none border-2 border-gray-300 rounded-full cursor-pointer
-    checked:bg-[#00807f] checked:border-[#00807f] focus:ring-0
-    before:absolute before:inset-0 before:flex before:items-center before:justify-center
-    before:content-[''] before:w-2.5 before:h-2.5
-   checked:before:text-[10px]
-    checked:before:[--tw-text-opacity:1] 
-  
-    checked:before:!text-white!"
+                className="w-5 h-5 accent-teal-600 rounded"
               />
               <span className="text-sm text-gray-700">Remember me</span>
             </label>
@@ -94,10 +84,7 @@ const SignIn = () => {
             </button>
           </div>
           <div className="px-20 flex justify-center">
-            <Button
-              type="submit"
-              size="lg"
-            >
+            <Button type="submit" size="lg">
               Sign in
             </Button>
           </div>

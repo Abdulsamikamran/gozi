@@ -5,6 +5,8 @@ import { ChevronDown, ChevronRight } from "lucide-react";
 const Sidebar = () => {
   const [isSettingsOpen, setIsSettingsOpen] = useState(true);
   const location = useLocation();
+  const selectedType = localStorage.getItem("profileType"); //care-seeker care-partner
+  console.log("Sidebar profile type:", selectedType);
 
   // Helper to check active route
   const isActiveRoute = (routePath) => location.pathname === routePath;
@@ -51,31 +53,33 @@ const Sidebar = () => {
         </NavLink>
 
         {/* MY BOOKINGS */}
-        <NavLink
-          to="/bookings"
-          className={({ isActive }) =>
-            `w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-4 transition-colors ${
-              isActive
-                ? "bg-white text-[#007C79]"
-                : "text-white hover:bg-[#007C79]/80"
-            }`
-          }
-        >
-          {({ isActive }) => (
-            <>
-              <img
-                src={
-                  isActive
-                    ? "/assets/icons/booking.svg"
-                    : "/assets/icons/bookingW-icon.svg"
-                }
-                alt="My Bookings"
-                className="w-5 h-5"
-              />
-              <span className="font-medium">My Bookings</span>
-            </>
-          )}
-        </NavLink>
+        {selectedType === "care-seeker" && (
+          <NavLink
+            to="/bookings"
+            className={({ isActive }) =>
+              `w-full flex items-center gap-3 px-4 py-3 rounded-lg mb-4 transition-colors ${
+                isActive
+                  ? "bg-white text-[#007C79]"
+                  : "text-white hover:bg-[#007C79]/80"
+              }`
+            }
+          >
+            {({ isActive }) => (
+              <>
+                <img
+                  src={
+                    isActive
+                      ? "/assets/icons/booking.svg"
+                      : "/assets/icons/bookingW-icon.svg"
+                  }
+                  alt="My Bookings"
+                  className="w-5 h-5"
+                />
+                <span className="font-medium">My Bookings</span>
+              </>
+            )}
+          </NavLink>
+        )}
 
         {/* INTERVIEWS */}
         <NavLink
@@ -129,67 +133,145 @@ const Sidebar = () => {
               <ChevronRight className="ml-auto w-4 h-4" />
             )}
           </button>
-
           {isSettingsOpen && (
             <div className="mt-2 bg-[#ffffff1a] rounded-lg py-2 w-[90%] mx-auto p-1">
               {/* PROFILE SETTINGS */}
               <NavLink
                 to="/settings/profile"
-                className={`flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
-                  isActiveRoute("/settings/profile")
-                    ? "bg-white text-[#007C79]"
-                    : "text-white hover:bg-[#007C79]/60"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-white text-[#007C79]"
+                      : "text-white hover:bg-[#007C79]/60"
+                  }`
+                }
               >
-                <span className="text-sm font-medium">Profile Settings</span>
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={
+                        isActive
+                          ? "/assets/icons/profile-icon.svg"
+                          : "/assets/icons/profileW-icon.svg"
+                      }
+                      className="w-5 h-5"
+                      alt=""
+                    />
+                    <span className="text-sm font-medium">
+                      Profile Settings
+                    </span>
+                  </>
+                )}
               </NavLink>
 
               {/* WALLET */}
               <NavLink
                 to="/settings/wallet"
-                className={`flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
-                  isActiveRoute("/settings/wallet")
-                    ? "bg-white text-[#007C79]"
-                    : "text-white hover:bg-[#007C79]/60"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-white text-[#007C79]"
+                      : "text-white hover:bg-[#007C79]/60"
+                  }`
+                }
               >
-                <span className="text-sm font-medium">Wallet</span>
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={
+                        isActive
+                          ? "/assets/icons/wallet.svg"
+                          : "/assets/icons/walletW.svg"
+                      }
+                      className="w-5 h-5"
+                      alt=""
+                    />
+                    <span className="text-sm font-medium">Wallet</span>
+                  </>
+                )}
               </NavLink>
 
               {/* PAYMENT METHOD */}
               <NavLink
                 to="/settings/payment"
-                className={`flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
-                  isActiveRoute("/settings/payment")
-                    ? "bg-white text-[#007C79]"
-                    : "text-white hover:bg-[#007C79]/60"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-white text-[#007C79]"
+                      : "text-white hover:bg-[#007C79]/60"
+                  }`
+                }
               >
-                <span className="text-sm font-medium">Payment Method</span>
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={
+                        isActive
+                          ? "/assets/icons/payment.svg"
+                          : "/assets/icons/paymentW.svg"
+                      }
+                      className="w-5 h-5"
+                      alt=""
+                    />
+                    <span className="text-sm font-medium">Payment Method</span>
+                  </>
+                )}
               </NavLink>
 
               {/* PRIVACY POLICY */}
               <NavLink
                 to="/settings/privacy"
-                className={`flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
-                  isActiveRoute("/settings/privacy-policy")
-                    ? "bg-white text-[#007C79]"
-                    : "text-white hover:bg-[#007C79]/60"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-white text-[#007C79]"
+                      : "text-white hover:bg-[#007C79]/60"
+                  }`
+                }
               >
-                <span className="text-sm font-medium">Privacy Policy</span>
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={
+                        isActive
+                          ? "/assets/icons/privacy.svg"
+                          : "/assets/icons/privacyW.svg"
+                      }
+                      className="w-5 h-5"
+                      alt=""
+                    />
+                    <span className="text-sm font-medium">Privacy Policy</span>
+                  </>
+                )}
               </NavLink>
 
               {/* TERMS & CONDITIONS */}
               <NavLink
                 to="/settings/terms"
-                className={`flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
-                  isActiveRoute("/settings/terms")
-                    ? "bg-white text-[#007C79]"
-                    : "text-white hover:bg-[#007C79]/60"
-                }`}
+                className={({ isActive }) =>
+                  `flex items-center gap-3 mb-2 px-3 py-2 rounded-md transition-colors ${
+                    isActive
+                      ? "bg-white text-[#007C79]"
+                      : "text-white hover:bg-[#007C79]/60"
+                  }`
+                }
               >
-                <span className="text-sm font-medium">Terms & Conditions</span>
+                {({ isActive }) => (
+                  <>
+                    <img
+                      src={
+                        isActive
+                          ? "/assets/icons/t&c.svg"
+                          : "/assets/icons/t&cW.svg"
+                      }
+                      className="w-5 h-5"
+                      alt=""
+                    />
+                    <span className="text-sm font-medium">
+                      Terms & Conditions
+                    </span>
+                  </>
+                )}
               </NavLink>
             </div>
           )}

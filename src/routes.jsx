@@ -19,6 +19,10 @@ const EmergencyContacts = React.lazy(() => import("./pages/Emergencycontacts"));
 const PaymentMethod = React.lazy(() => import("./pages/Paymentmethod"));
 const CreatProfilePage = React.lazy(() => import("./pages/Createprofile"));
 const Certifications = React.lazy(() => import("./pages/Certifications"));
+const BackgroundCheck = React.lazy(() => import("./pages/BackgroundCheck"));
+const PreCheckIn = React.lazy(() => import("./pages/PreCheckIn"));
+
+const Availability = React.lazy(() => import("./pages/Availability"));
 
 const PersonalInformation = React.lazy(() =>
   import("./pages/PersonalInformation")
@@ -106,6 +110,22 @@ const routes = [
     layout: "/auth",
     path: "/certifications",
     component: <Certifications />,
+    isProtected: false,
+    show: false,
+  },
+  {
+    name: "Availability",
+    layout: "/auth",
+    path: "/availability",
+    component: <Availability />,
+    isProtected: false,
+    show: false,
+  },
+  {
+    name: "Background Check",
+    layout: "/auth",
+    path: "/background-check",
+    component: <BackgroundCheck />,
     isProtected: false,
     show: false,
   },
@@ -303,6 +323,16 @@ const routes = [
     path: "/dashboard/doctor-profile",
     icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
     component: <DrProfilePage />,
+    isProtected: true,
+    show: false,
+  },
+  {
+    name: "Pre Check in",
+    role: ["admin"],
+    layout: "/admin",
+    path: "/dashboard/pre-check-in",
+    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    component: <PreCheckIn />,
     isProtected: true,
     show: false,
   },

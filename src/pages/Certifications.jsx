@@ -40,16 +40,12 @@ const Certifications = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Profile data:", formData);
-    if (selectedType === "care-seeker") {
-      navigate("/add-care-recipient");
-    } else {
-      navigate("/experience");
-    }
+
+    navigate("/availability");
   };
 
   return (
-    <div className="min-h-screen mx-20">
+    <div className="h-[75vh] mx-20">
       {/* Header */}
 
       <div className=" flex gap-5 py-10 items-start ">
@@ -61,7 +57,7 @@ const Certifications = () => {
         </button>
         <div>
           <h1 className="text-5xl font-bold text-gray-900 mb-2">
-            Professional information
+            Certifications
           </h1>
           <p className="text-gray-600 mb-8">
             Tell us about your professional background — whether you're
@@ -72,8 +68,11 @@ const Certifications = () => {
       </div>
 
       {/* Main Content */}
-      <div className=" mx-auto h-full  pb-24">
-        <form onSubmit={handleSubmit} className="space-y-6 h-full">
+      <div className=" mx-auto h-full flex flex-col  pb-24">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 flex flex-col justify-between h-full"
+        >
           {/* Profile Picture Section */}
 
           {/* Form Fields */}
@@ -94,7 +93,7 @@ const Certifications = () => {
                 <div className="flex items-center gap-4">
                   <button
                     // onClick={handleAddNew}
-                    className="flex items-center whitespace-nowraps gap-2 px-6 py-2 bg-purple-800 text-white rounded-lg font-medium hover:bg-teal-700 transition-colors"
+                    className="flex items-center whitespace-nowraps gap-2 px-6 py-2 bg-[#662C90] whitespace-nowrap text-white rounded-lg font-medium hover:bg-teal-700 transition-colors"
                   >
                     Upload Photo
                   </button>
@@ -106,14 +105,14 @@ const Certifications = () => {
               <div className="flex items-center justify-end gap-4">
                 <button
                   // onClick={() => handleDelete(experience.id)}
-                  className="flex items-center gap-2 px-6 bg-red-500 text-white py-3 hover:bg-red-600  rounded-lg font-medium transition-colors "
+                  className="flex items-center gap-2 px-6 bg-red-500 text-white py-2 hover:bg-red-600  rounded-lg font-medium transition-colors "
                 >
                   <Trash2 size={20} />
                   Delete
                 </button>
                 <button
                   // onClick={handleAddNew}
-                  className="flex items-center gap-2 px-6 py-3 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition-colors"
+                  className="flex items-center gap-2 px-20 py-2 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition-colors"
                 >
                   Add New
                 </button>

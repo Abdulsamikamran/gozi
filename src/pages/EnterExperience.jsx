@@ -59,7 +59,7 @@ const EnterExperience = () => {
     navigate("/certifications");
   };
   return (
-    <div className="min-h-screen mx-20">
+    <div className="h-screen mx-20  flex flex-col pb-28">
       {/* Header */}
 
       <div className=" flex gap-5 py-10 items-start ">
@@ -81,7 +81,7 @@ const EnterExperience = () => {
       </div>
 
       {/* Main Content */}
-      <div className="mx-auto pb-28">
+      <div className="mx-auto flex-1 w-full pb-28">
         <div className="space-y-8">
           {experiences.map((experience, index) => (
             <div key={experience.id}>
@@ -234,7 +234,7 @@ const EnterExperience = () => {
           ))}
         </div>
       </div>
-      <div className="flex justify-end mt-auto ">
+      <div className="flex justify-end items-end mt-auto ">
         <Button onClick={handleNext} size="lg" className="min-w-[200px]">
           Next
         </Button>
