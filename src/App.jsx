@@ -20,7 +20,7 @@ export default function App() {
     <Router>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<Navigate to="/dashboard" replace />} />
+          <Route path="/" element={<Navigate to="/welcome" replace />} />
           <Route element={<AuthLayout />}>
             {routes
               .filter((r) => r.layout === "/auth") // should be /auth
