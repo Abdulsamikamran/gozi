@@ -4,11 +4,11 @@ import Button from "../components/ui/Button";
 
 const SelectProfileType = () => {
   const navigate = useNavigate();
-  const [selectedType, setSelectedType] = useState("care-seeker");
+  const [selectedType, setSelectedType] = useState("caregiver");
 
   // Load stored value when component mounts
   useEffect(() => {
-    const saved = localStorage.getItem("profileType");
+    const saved = localStorage.getItem("activeRole");
     if (saved) {
       setSelectedType(saved);
     }
@@ -17,7 +17,7 @@ const SelectProfileType = () => {
   // Save to localStorage whenever the user selects a type
   const handleSelect = (type) => {
     setSelectedType(type);
-    localStorage.setItem("profileType", type);
+    localStorage.setItem("activeRole", type);
   };
 
   const handleNext = () => {
@@ -33,7 +33,10 @@ const SelectProfileType = () => {
           onClick={() => navigate(-1)}
           className=" hover:bg-gray-100 mt-3 rounded-lg transition-colors"
         >
-          <img src="/assets/icons/back-arrow.svg" alt="" />
+          <img
+            src="/assets/icons/back-arrow.svg"
+            alt=""
+          />
         </button>
         <div>
           <h1 className="text-5xl font-bold text-gray-900 ">
@@ -51,16 +54,19 @@ const SelectProfileType = () => {
         <div className="grid md:grid-cols-2 justify-center items-center gap-6 mb-8">
           {/* Care Seeker Card */}
           <button
-            onClick={() => handleSelect("care-seeker")}
+            onClick={() => handleSelect("patient-and-family")}
             className={`p-8 rounded-2xl border-2 shadow-lg transition-all text-left ${
-              selectedType === "care-seeker"
+              selectedType === "patient-and-family"
                 ? "border-teal-600 "
                 : "border-gray-200 bg-white hover:border-gray-300"
             }`}
           >
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-24 h-24 bg-gray-100 rounded-2xl flex items-center justify-center">
-                <img src="/assets/images/seeker.svg" alt="" />
+                <img
+                  src="/assets/images/seeker.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -75,16 +81,19 @@ const SelectProfileType = () => {
 
           {/* Care Partner Card */}
           <button
-            onClick={() => handleSelect("care-partner")}
+            onClick={() => handleSelect("caregiver")}
             className={`p-8 rounded-2xl border-2 shadow-lg transition-all text-left ${
-              selectedType === "care-partner"
+              selectedType === "caregiver"
                 ? "border-teal-600 "
                 : "border-gray-200 bg-white hover:border-gray-300"
             }`}
           >
             <div className="flex flex-col items-center text-center space-y-4">
               <div className="w-24 h-24 bg-gray-100 rounded-2xl flex items-center justify-center">
-                <img src="/assets/images/giver.svg" alt="" />
+                <img
+                  src="/assets/images/giver.svg"
+                  alt=""
+                />
               </div>
               <div>
                 <h3 className="text-xl font-bold text-gray-900 mb-2">
@@ -100,7 +109,10 @@ const SelectProfileType = () => {
 
         {/* Next Button */}
         <div className="flex justify-center">
-          <Button onClick={handleNext} size="lg">
+          <Button
+            onClick={handleNext}
+            size="lg"
+          >
             Next
           </Button>
         </div>

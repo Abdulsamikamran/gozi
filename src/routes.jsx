@@ -8,6 +8,12 @@ import { IoMdWallet } from "react-icons/io";
 import { BsPersonFillGear } from "react-icons/bs";
 
 const HomePage = React.lazy(() => import("./pages/Home"));
+const CareGiverHomePage = React.lazy(() =>
+  import("./pages/CareGiverDashboard")
+);
+const CareGiverDocProfile = React.lazy(() =>
+  import("./pages/home/careGiverDocProfile")
+);
 const WelcomPage = React.lazy(() => import("./pages/Welcome"));
 const SignInPage = React.lazy(() => import("./pages/SignIn"));
 const SignUpPage = React.lazy(() => import("./pages/SIgnUp"));
@@ -157,110 +163,165 @@ const routes = [
 
   {
     name: "Welcome",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/welcome",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <WelcomPage />,
     isProtected: false,
     show: false,
   },
   {
     name: "Sign In",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/sign-in",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <SignInPage />,
     isProtected: false,
     show: false,
   },
   {
     name: "Sign Up",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/sign-up",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <SignUpPage />,
     isProtected: false,
     show: false,
   },
   {
     name: "Select Profile Type",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/select-profile-type",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <SelectProfileType />,
     isProtected: false,
     show: false,
   },
   {
     name: "Create Profile",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/create-profile",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <CreatProfilePage />,
     isProtected: false,
     show: false,
   },
   {
     name: "Add Care Recipient",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/add-care-recipient",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <AddCareRecipient />,
     isProtected: false,
     show: false,
   },
   {
     name: "Health Info",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/share-health-info",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <ShareHealthInfo />,
     isProtected: false,
     show: false,
   },
   {
     name: "Health Info",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/all-care-recipients",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <AllCareRecipients />,
     isProtected: false,
     show: false,
   },
   {
     name: "Emergency Contact",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/emergency-contacts",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <EmergencyContacts />,
     isProtected: false,
     show: false,
   },
   {
     name: "Payment Method",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/payment-method",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <PaymentMethod />,
     isProtected: false,
     show: false,
   },
   {
     name: "Reset Password",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/auth",
     path: "/reset-password",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <ResetPasswordPage />,
     isProtected: false,
     show: false,
@@ -268,160 +329,270 @@ const routes = [
   // _____________________________________________________
   {
     name: "Home",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <HomePage />,
     isProtected: true,
     show: true,
   },
   {
+    name: "Home",
+    role: ["caregiver"],
+    layout: "/admin",
+    path: "/dashboard",
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <CareGiverHomePage />,
+    isProtected: true,
+    show: true,
+  },
+  {
+    name: "Home",
+    role: ["caregiver"],
+    layout: "/admin",
+    path: "/dashboard/doc",
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
+    component: <CareGiverDocProfile />,
+    isProtected: true,
+    show: false,
+  },
+  {
     name: "My Bookings",
-    role: ["admin", "caregiver"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/bookings",
-    icon: <IoTicket w="60px" h="60px" />,
+    icon: (
+      <IoTicket
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <BookingsPage />,
     isProtected: true,
     show: true,
   },
   {
     name: "Interviews",
-    role: ["admin"],
+    role: ["patient-and-family", "caregiver"],
     layout: "/admin",
     path: "/interviews",
-    icon: <BsPersonFillGear w="60px" h="60px" />,
+    icon: (
+      <BsPersonFillGear
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <InterViewPage />,
     isProtected: true,
     show: true,
   },
   {
     name: "Chat",
-    role: ["admin"],
+    role: ["patient-and-family", "caregiver"],
     layout: "/admin",
     path: "/chat",
-    icon: <BsPersonFillGear w="60px" h="60px" />,
+    icon: (
+      <BsPersonFillGear
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <ChatPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Dr Bookings",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/bookings/doc",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <DocBookingPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Doctor Profile",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/doctor-profile",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <DrProfilePage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Pre Check in",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/pre-check-in",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <PreCheckIn />,
     isProtected: true,
     show: false,
   },
   {
     name: "Schedule Interview",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/schedule-interview",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <ScheduleInterviewPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Schedule Interview Success",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/schedule-interview/success",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <ScheduleInterviewSuccessPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Checkout",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/schedule-interview/checkout",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <CheckoutPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Checkout",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/dashboard/schedule-interview/checkout",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <CheckoutPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Notifications",
-    role: ["admin"],
+    role: ["patient-and-family", "caregiver"],
     layout: "/admin",
     path: "/notifications",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <NotificationsPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "EmergencyCall",
-    role: ["admin"],
+    role: ["patient-and-family", "caregiver"],
     layout: "/admin",
     path: "/emergency-call",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <EmergencyCall />,
     isProtected: true,
     show: false,
   },
   {
     name: "Wallet Transactions",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/settings/wallet/transactions",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <WalletTransactionsPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Wallet Transactions",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/settings/wallet/withdraw",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <WithdrawMoneyPage />,
     isProtected: true,
     show: false,
   },
   {
     name: "Add Payment Method",
-    role: ["admin"],
+    role: ["patient-and-family"],
     layout: "/admin",
     path: "/settings/payment/add",
-    icon: <TbLayoutDashboardFilled w="60px" h="60px" />,
+    icon: (
+      <TbLayoutDashboardFilled
+        w="60px"
+        h="60px"
+      />
+    ),
     component: <AddPaymentMethod />,
     isProtected: true,
     show: false,
@@ -430,9 +601,14 @@ const routes = [
   {
     name: "Settings",
     layout: "/admin",
-    role: ["admin"],
+    role: ["patient-and-family", "caregiver"],
     path: "/settings",
-    icon: <IoSettingsSharp w="60px" h="60px" />,
+    icon: (
+      <IoSettingsSharp
+        w="60px"
+        h="60px"
+      />
+    ),
     // component: <div>Select a setting option from the sidebar.</div>,
     component: <SettingsLayout />,
     show: false,
@@ -440,33 +616,58 @@ const routes = [
       {
         name: "Profile Settings",
         path: "profile",
-        icon: <FaUser w="60px" h="60px" />,
+        icon: (
+          <FaUser
+            w="60px"
+            h="60px"
+          />
+        ),
         component: <ProfileSettingsPage />,
       },
       {
         name: "Wallet",
         path: "wallet",
-        icon: <IoMdWallet w="60px" h="60px" />,
+        icon: (
+          <IoMdWallet
+            w="60px"
+            h="60px"
+          />
+        ),
         component: <WalletPage />,
       },
       {
         name: "Payment Method",
         path: "payment",
         component: <PaymentMethodPage />,
-        icon: <FaCreditCard w="60px" h="60px" />,
+        icon: (
+          <FaCreditCard
+            w="60px"
+            h="60px"
+          />
+        ),
       },
 
       {
         name: "Privacy Policy",
         path: "privacy",
         component: <PrivacyPolicyPage />,
-        icon: <MdShield w="60px" h="60px" />,
+        icon: (
+          <MdShield
+            w="60px"
+            h="60px"
+          />
+        ),
       },
       {
         name: "Terms & Conditions",
         path: "terms",
         component: <TermsAndConditionsPage />,
-        icon: <FaClipboard w="60px" h="60px" />,
+        icon: (
+          <FaClipboard
+            w="60px"
+            h="60px"
+          />
+        ),
       },
     ],
   },

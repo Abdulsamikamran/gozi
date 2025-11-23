@@ -90,13 +90,16 @@ export default function BookingsPage() {
               <span className="text-lg font-medium text-[#193B36]/80">/h</span>
             </div>
             {/* Actions */}
-            <div className="flex flex-col gap-2 min-w-[130px]">
+            <div className="flex flex-col gap-2 min-w-[250px]">
               <button
                 onClick={() => navigate("/bookings/doc")}
-                className="min-w-[240px] flex items-center justify-center gap-2 bg-[#008080] hover:bg-[#007067] transition text-white text-lg font-semibold py-2 rounded-[12px] shadow-sm"
+                className="min-w-[250px] flex items-center justify-center gap-2 bg-[#008080] hover:bg-[#007067] transition text-white text-lg font-semibold py-2 rounded-[12px] shadow-sm"
               >
                 <FaComments className="w-5 h-5" />
-                Chat
+                Send
+              </button>
+              <button className="bg-[#FF6C6C] hover:bg-[#d74242] transition text-white text-lg font-semibold py-2 rounded-[12px] shadow-sm">
+                Accept
               </button>
               <button className="bg-[#FF6C6C] hover:bg-[#d74242] transition text-white text-lg font-semibold py-2 rounded-[12px] shadow-sm">
                 Cancel

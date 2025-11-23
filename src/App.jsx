@@ -16,11 +16,20 @@ const Loader = () => (
 );
 
 export default function App() {
+  const activeRole = localStorage.getItem("activeRole") || "patient-and-family";
   return (
     <Router>
       <Suspense fallback={<Loader />}>
         <Routes>
-          <Route path="/" element={<Navigate to="/welcome" replace />} />
+          <Route
+            path="/"
+            element={
+              <Navigate
+                to="/welcome"
+                replace
+              />
+            }
+          />
           <Route element={<AuthLayout />}>
             {routes
               .filter((r) => r.layout === "/auth") // should be /auth
@@ -37,9 +46,15 @@ export default function App() {
 
           <Route element={<DashboardLayout />}>
             {routes
-              .filter((r) => r.layout === "/admin")
+              .filter(
+                (r) => r.layout === "/admin" && r.role?.includes(activeRole)
+              )
               .map(({ path, component, children }, idx) => (
-                <Route key={idx} path={path} element={component}>
+                <Route
+                  key={idx}
+                  path={path}
+                  element={component}
+                >
                   {/* Nested Child Routes */}
                   {children &&
                     children.map((child, cIdx) => (
