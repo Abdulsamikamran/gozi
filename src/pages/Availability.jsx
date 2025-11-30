@@ -90,7 +90,7 @@ const Availability = () => {
   };
 
   return (
-    <div className="h-[75vh] mx-20">
+    <div className="h-[100vh] mx-20 mb-20">
       {/* Header */}
 
       <div className=" flex gap-5 py-10 items-start ">

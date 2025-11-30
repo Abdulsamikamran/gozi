@@ -6,3 +6,11 @@
       --color-gray-900 : #183C3C; /* Example: a custom secondary color */
       --color-accent: #5733FF;   /* Example: a custom accent color */
     }
+    .hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.hide-scrollbar {
+  -ms-overflow-style: none; /* IE & Edge */
+  scrollbar-width: none; /* Firefox */
+}

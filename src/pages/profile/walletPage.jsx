@@ -47,7 +47,7 @@ export default function WalletPage() {
             <span className="text-sm text-[#183C3C] mt-2">Withdraw Money</span>
           </button>
           <button
-            onClick={() => navigate("/settings/wallet/withdraw")}
+            onClick={() => navigate("/settings/wallet/deposit")}
             className="w-[160px] cursor-pointer bg-white rounded-xl shadow-[0_0_18px_0_rgba(16,30,54,0.08)] flex flex-col items-center justify-center"
           >
             <svg

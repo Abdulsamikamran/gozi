@@ -19,10 +19,7 @@ const CardSVG = ({ selected }) => (
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#115B8A" />
-        <stop
-          offset="1"
-          stopColor="#008080"
-        />
+        <stop offset="1" stopColor="#008080" />
       </linearGradient>
     </defs>
     <rect
@@ -34,13 +31,7 @@ const CardSVG = ({ selected }) => (
       fill="url(#card-gradient)"
       opacity={selected ? "1" : "0.75"}
     />
-    <ellipse
-      cx="180"
-      cy="20"
-      rx="28"
-      ry="18"
-      fill="#ffffff10"
-    />
+    <ellipse cx="180" cy="20" rx="28" ry="18" fill="#ffffff10" />
   </svg>
 );
 
@@ -176,10 +167,10 @@ export default function WithdrawMoneyPage() {
           </div>
           <div className="w-full flex justify-end">
             <button
-              onClick={() => setStep(1)}
+              onClick={() => setStep(3)}
               className="w-[300px] max-w-[95vw] h-10 rounded-[10px] text-white font-semibold bg-gradient-to-r from-[#115B8A] to-[#008080]"
             >
-              Next
+              Done
             </button>
           </div>
         </div>

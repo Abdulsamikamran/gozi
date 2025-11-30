@@ -18,10 +18,7 @@ const CardSVG = () => (
         gradientUnits="userSpaceOnUse"
       >
         <stop stopColor="#115B8A" />
-        <stop
-          offset="1"
-          stopColor="#008080"
-        />
+        <stop offset="1" stopColor="#008080" />
       </linearGradient>
     </defs>
     <rect
@@ -32,13 +29,7 @@ const CardSVG = () => (
       rx="20"
       fill="url(#card-gradient)"
     />
-    <ellipse
-      cx="200"
-      cy="30"
-      rx="35"
-      ry="23"
-      fill="#ffffff18"
-    />
+    <ellipse cx="200" cy="30" rx="35" ry="23" fill="#ffffff18" />
   </svg>
 );
 
@@ -57,12 +48,8 @@ export default function PaymentMethod() {
         {/* Visa Card */}
         <div
           onClick={() => setSelected(0)}
-          className={`relative w-[260px] h-[140px] rounded-2xl cursor-pointer shadow-md border transition-all flex flex-col justify-between
-            ${
-              selected === 0
-                ? "border-2 border-[#008080] scale-105"
-                : "border border-gray-200 opacity-90"
-            }`}
+          className={`relative w-[260px] h-[140px] rounded-2xl cursor-pointer shadow-md  transition-all flex flex-col justify-between
+          `}
           style={{ zIndex: 2 }}
         >
           <CardSVG />
@@ -89,9 +76,9 @@ export default function PaymentMethod() {
           <span className="text-gray-400 text-xl font-semibold mb-3">
             Add New
           </span>
-          <span className="rounded-full border-2 border-gray-400 w-11 h-11 flex items-center justify-center text-2xl text-gray-400 group-hover:border-[#008080] group-hover:text-[#008080] transition">
-            +
-          </span>
+          <div className="rounded-full relative border-2 border-gray-400 w-11 h-11 flex justify-center text-3xl text-gray-400  group-hover:border-[#008080] group-hover:text-[#008080] transition">
+            <p className="abdolute top-0 bottom-20">+</p>
+          </div>
         </div>
       </div>
     </div>

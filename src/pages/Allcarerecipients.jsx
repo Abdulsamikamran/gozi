@@ -27,10 +27,7 @@ const AllCareRecipients = () => {
           onClick={() => navigate(-1)}
           className="hover:bg-gray-100 rounded-lg mt-3 transition-colors"
         >
-          <img
-            src="/assets/icons/back-arrow.svg"
-            alt=""
-          />
+          <img src="/assets/icons/back-arrow.svg" alt="" />
         </button>
         <div>
           <h1 className="text-4xl font-bold text-gray-900 mb-2">
@@ -100,11 +97,7 @@ const AllCareRecipients = () => {
 
       {/* Push the Next button to the bottom-right */}
       <div className="mt-auto flex justify-end pb-10">
-        <Button
-          onClick={handleNext}
-          size="lg"
-          className="min-w-[200px]"
-        >
+        <Button onClick={handleNext} size="lg" className="min-w-[200px]">
           Next
         </Button>
       </div>
