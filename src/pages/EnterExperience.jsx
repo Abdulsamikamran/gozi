@@ -53,6 +53,8 @@ const EnterExperience = () => {
   };
 
   const handleDelete = (id) => {
+    if (experiences.length === 1) return;
+
     setExperiences((prev) => prev.filter((exp) => exp.id !== id));
   };
   const handleNext = () => {
@@ -206,7 +208,7 @@ const EnterExperience = () => {
                 {/* Action Buttons */}
                 <div className="flex justify-end gap-3 pt-4">
                   <button
-                    // onClick={() => handleDelete(experience.id)}
+                    onClick={() => handleDelete(experience.id)}
                     disabled={experiences.length === 1}
                     className={`flex items-center gap-2 px-6 py-2 rounded-lg font-medium transition-colors ${
                       experiences.length === 1
@@ -218,7 +220,7 @@ const EnterExperience = () => {
                     Delete
                   </button>
                   <button
-                    // onClick={handleAddNew}
+                    onClick={handleAddNew}
                     className="flex items-center gap-2 px-6 py-2 bg-teal-600 text-white rounded-lg font-medium hover:bg-teal-700 transition-colors"
                   >
                     Add New

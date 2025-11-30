@@ -29,7 +29,7 @@ const EmergencyContacts = () => {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white mx-20">
+    <div className="flex flex-col min-h-screen  mx-20">
       {/* Header */}
       <div className="flex gap-5 py-10 items-start">
         <button

@@ -8,9 +8,9 @@ const SplitScreenLayout = ({ children, showBackButton = false }) => {
   const navigate = useNavigate();
 
   return (
-    <div className="flex h-screen w-full overflow-hidden">
+    <div className="flex h-screen w-full overflow-hidden ">
       {/* Left Side - Content */}
-      <div className="w-full lg:w-1/2 flex flex-col">
+      <div className="w-full lg:w-1/2 flex flex-col overflow-y-auto hide-scrollbar  pb-12">
         {/* Header with Back Button */}
         <div className="p-3 lg:pt-8 lg:px-8">
           <div className="flex items-center gap-4">
@@ -27,7 +27,7 @@ const SplitScreenLayout = ({ children, showBackButton = false }) => {
         </div>
 
         {/* Main Content */}
-        <div className="flex flex-col items-center justify-center flex-1 px-6 lg:px-20 xl:px-40  gap-10 ">
+        <div className="flex flex-col items-center justify-center flex-1 px-6 md:px-20 lg:px-28   gap-10 ">
           <Logo />
           <div className="w-full">{children}</div>
         </div>

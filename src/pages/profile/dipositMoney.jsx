@@ -50,7 +50,7 @@ const cards = [
   },
 ];
 
-export default function WithdrawMoneyPage() {
+export default function DepositMoneyPage() {
   const [step, setStep] = useState(1);
   const [amount, setAmount] = useState("10.00");
   const [selectedCard, setSelectedCard] = useState(0);
@@ -78,7 +78,7 @@ export default function WithdrawMoneyPage() {
           <IoArrowBackSharp className="w-6 h-6 text-[#183C3C]" />
         </button>
         <h2 className="text-[32px] font-semibold text-[#183C3C]">
-          Withdraw Money
+          Deposit Money
         </h2>
       </div>
 
@@ -86,7 +86,7 @@ export default function WithdrawMoneyPage() {
       {step === 1 && (
         <>
           <label className="block text-[16px] font-semibold text-[#008080] mt-3 mb-2">
-            Enter withdraw amount
+            Enter Deposit amount
           </label>
           <input
             className="w-full rounded-md border-none bg-[#F3F3F3] text-[#969696] px-4 py-2 text-base mb-7"
@@ -111,7 +111,7 @@ export default function WithdrawMoneyPage() {
       {step === 2 && (
         <>
           <label className="block text-[15px] font-semibold text-[#008080] mt-3 mb-6">
-            Select the card to withdraw to
+            Select the card to Deposit to
           </label>
           <div className="flex flex-wrap gap-8 mb-6">
             {cards.map((card, i) => (

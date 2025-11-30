@@ -171,7 +171,7 @@ const BackgroundCheck = () => {
 
   // Step 3: Confirmation Screen
   const ConfirmationScreen = () => (
-    <div className="space-y-8">
+    <div className="space-y-8 h-screen mb-20 pb-20">
       <div className="flex justify-center py-12">
         <img
           className="w-[316px] h-[409px]"
